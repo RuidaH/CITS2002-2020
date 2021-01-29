@@ -1,0 +1,49 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type='text/javascript'>
+
+    google.charts.load('current', {packages: ['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data  = new google.visualization.DataTable();
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      var options = {
+        title: 'Comparison of data structures',
+        hAxis: {
+	  title: 'Number of words'
+        },
+        vAxis: {
+	  title: 'milliseconds',
+	  viewWindow: {
+	    min: 0
+	  }
+        },
+	curveType: 'function',
+        width:  800,
+        height: 600
+      };
+      data.addColumn('number', 'Number of words');
+      data.addColumn('number', 'list-add');
+      data.addColumn('number', 'list-find');
+      data.addColumn('number', 'hashtable-add');
+      data.addColumn('number', 'hashtable-find');
+
+      data.addRows([
+          [1000, 1, 1, 0, 0],
+          [5000, 36, 26, 0, 0],
+          [10000, 103, 87, 1, 0],
+          [25000, 572, 553, 4, 3],
+          [50000, 2249, 2040, 13, 10],
+      ]);
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+
+<body>
+  <div id='chart_div'></div>
+</body>
+</html>
