@@ -1,0 +1,4 @@
+1 fork 2
+1 pipe 4
+1 exit
+2 exit

@@ -1,0 +1,7 @@
+# add your events here:
+#
+1 fork 2
+1 wait 2
+2 compute 1000
+1 exit
+2 exit

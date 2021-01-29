@@ -1,0 +1,19 @@
+1       pipe            1
+1       fork            2
+1       writepipe       1       100
+2       pipe            2
+2       fork            3
+2       writepipe       2       100
+1       pipe            2
+1       fork            4
+1       writepipe       2       100
+4       readpipe        2       50
+4       readpipe        2       50
+3       readpipe        2       50
+3       readpipe        2       50
+2       readpipe        1       50
+2       readpipe        1       50
+1       exit
+2       exit
+3       exit
+4       exit
